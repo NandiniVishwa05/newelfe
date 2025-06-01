@@ -15,21 +15,19 @@ export default function ListPage() {
   const [searchinput, setSearchInput] = useState('');
 
   const fetchTableListData = async () => {
-    try {
-      let res = await fetch("https://newelbe.onrender.com/fetchtabledata", {
-        method: "GET",
-      });
-      res = await res.json();
-      if (res.msg == "Datafound") {
-        setTableData(res.data)
-      }
-    } catch (error) {
-      console.log(error);
+    let res = await fetch("https://newelbe.onrender.com/fetchtabledata", {
+      method: "GET",
+    });
+    res = await res.json();
+    if (res.msg == "Datafound") {
+      setTableData(res.data)
     }
   }
 
   const enableAddEditPage = () => {
-    console.log(tabledata[0]);
+    //console.log(tabledata[0]);
+    dispatch(setEnableUpdate(false));
+    dispatch(setViewMode(false));
     navigate('/addeditpage');
   }
 
@@ -45,7 +43,7 @@ export default function ListPage() {
   }
 
   const HandleSearch = async () => {
-    console.log("HelloSearch");
+    //console.log("HelloSearch");
     let res = await fetch(`https://newelbe.onrender.com/searchuserdata/${searchinput}`, {
       method: "GET",
     });
@@ -58,11 +56,11 @@ export default function ListPage() {
     }
   }
   const HandleEdit = () => {
-    dispatch(setEnableUpdate(true))
+    // dispatch(setEnableUpdate(true))
     navigate('/addeditpage')
   }
   const HandleViewMode = () => {
-    dispatch(setViewMode(true))
+    // dispatch(setViewMode(true))
     navigate('/addeditpage')
   }
   useEffect(() => {
@@ -93,20 +91,18 @@ export default function ListPage() {
                 <th>Action</th>
               </thead>
               <tbody>
-                <tr>
-                  {tabledata.map((user) => (
-                    <tr className="table-row" key={user.id}>
-                      <td className="row-item">{user.uname}</td>
-                      <td className="row-item">{user.udepartment}</td>
-                      <td className="row-item">{user.udob}</td>
-                      <td className="nv-grid row-item">
-                        <button onClick={() => { HandleViewMode() }}><IoEyeSharp /></button>
-                        <button onClick={() => { HandleEdit(); dispatch(setUserId(user.id)); }}><FiEdit /></button>
-                        <button onClick={() => { HandleDelete(user.id) }}><AiOutlineDelete /> </button>
-                      </td>
-                    </tr>
-                  ))}
-                </tr>
+                {tabledata.map((user) => (
+                  <tr className="table-row" key={user.id}>
+                    <td className="row-item">{user.uname}</td>
+                    <td className="row-item">{user.udepartment}</td>
+                    <td className="row-item">{user.udob}</td>
+                    <td className="nv-grid row-item">
+                      <button onClick={() => { HandleViewMode(); dispatch(setViewMode(true)); dispatch(setEnableUpdate(false)); }}><IoEyeSharp /></button>
+                      <button onClick={() => { HandleEdit(); dispatch(setUserId(user.id)); dispatch(setEnableUpdate(true)); dispatch(setViewMode(false)); }}><FiEdit /></button>
+                      <button onClick={() => { HandleDelete(user.id) }}><AiOutlineDelete /> </button>
+                    </td>
+                  </tr>
+                ))}
               </tbody>
             </table>
           </div>

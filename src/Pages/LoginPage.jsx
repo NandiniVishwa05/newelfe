@@ -30,7 +30,7 @@ export default function LoginPage() {
         }
     }
     const checkUser = async () => {
-        console.log(username);
+        //console.log(username);
         let element = document.getElementsByClassName('inputfield');
 
         let res = await fetch("https://newelbe.onrender.com/checkuser", {
@@ -42,7 +42,7 @@ export default function LoginPage() {
             },
         });
         res = await res.json();
-        console.log(res);
+        //console.log(res);
         if (res.msg === "validuser") {
             element[1].style.border = "1px solid #1B6392"
             navigate('/listpage');
