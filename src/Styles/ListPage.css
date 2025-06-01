@@ -36,8 +36,8 @@ th,td{
     border: 1px solid rgb(223, 223, 223);
 }
 .row-item{
-    gap: 3px;
+    gap: 8px;
 }
 .row-item button{
-    padding: 3px;
+    padding: 8px;
 }
