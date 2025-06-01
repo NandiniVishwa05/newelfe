@@ -8,8 +8,6 @@ export default function AddEditPage() {
   const uid = useSelector((state) => state.uid.userid);
   let isUpdate = useSelector((state) => state.uid.enableUpdate);
   const isView = useSelector((state) => state.uid.viewMode);
-
-  // //console.log(enableupdate);
   const validateFormData = () => {
     let err = 0;
     let input = document.getElementsByClassName('inputvalue');
@@ -66,7 +64,6 @@ export default function AddEditPage() {
       },
     });
     res = await res.json();
-    //console.log(res.msg);
     if (res.msg == "UserInsertedSuccessfully") {
       input[0].value = "",
         input[3].value = "",
@@ -96,23 +93,15 @@ export default function AddEditPage() {
     });
     res = await res.json();
     let data = res.data;
-    //console.log(res.data);
-
     if (res.msg === "Datafound") {
       input[0].value = data[0].uname;
       input[1].value = data[0].udepartment;
       input[2].value = data[0].udob;
       input[3].value = data[0].uaddress;
-      //console.log(cb);
-
       rb[0].value.toLowerCase() === res.data.ugender ? rb[0].checked = true : rb[1].checked = true;
-      //console.log(data[0].hobby);
       for (let i = 0; i < cb.length; i++) {
         for (let j = 0; j < data[0].hobby.length; j++) {
           if (cb[i].value == data[0].hobby[j].hobby_id) {
-
-            //console.log(cb[i].value);
-
             cb[i].checked = true;
           }
         }
@@ -194,6 +183,7 @@ export default function AddEditPage() {
                   <input className='cb' type="checkbox" value={"3"} /> Playing
                 </div>
                 <div className="checkboxwrapper">
+                  <input className='cb' type="checkbox" value={"4"} /> Coding
                 </div>
               </div>
             </div>
