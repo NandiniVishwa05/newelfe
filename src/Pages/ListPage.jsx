@@ -97,7 +97,7 @@ export default function ListPage() {
                     <td className="row-item">{user.udepartment}</td>
                     <td className="row-item">{user.udob}</td>
                     <td className="nv-grid row-item">
-                      <button onClick={() => { HandleViewMode(); dispatch(setViewMode(true)); dispatch(setEnableUpdate(false)); }}><IoEyeSharp /></button>
+                      <button onClick={() => { HandleViewMode(); dispatch(setUserId(user.id)); dispatch(setViewMode(true)); dispatch(setEnableUpdate(false)); }}><IoEyeSharp /></button>
                       <button onClick={() => { HandleEdit(); dispatch(setUserId(user.id)); dispatch(setEnableUpdate(true)); dispatch(setViewMode(false)); }}><FiEdit /></button>
                       <button onClick={() => { HandleDelete(user.id) }}><AiOutlineDelete /> </button>
                     </td>
