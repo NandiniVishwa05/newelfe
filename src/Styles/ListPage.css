@@ -1,0 +1,43 @@
+.listpageheaderwrapper {
+    padding: 15px;
+    background-color: var(--black-color);
+}
+
+.listpagesearchwrapper button {
+    padding: 6px 10px;
+    border-radius: 0;
+}
+
+.listpagesearchandbuttonwrapper {
+    gap: 5px;
+}
+
+.listpagesearchwrapper {
+    gap: 10px;
+    padding: 15px;
+    border-bottom: 1px solid rgb(223, 223, 223);
+}
+
+.listpagesearchwrapper input {
+    padding: 6px;
+    border-radius: 0;
+}
+.listpagetablemainwrapper{
+    padding: 15px;
+    flex-direction: column;
+    gap: 20px;
+}
+.listpagetableheader{
+    padding: 10px;
+}
+th,td{
+    /* width:800px ; */
+    padding: 8px 10px;
+    border: 1px solid rgb(223, 223, 223);
+}
+.row-item{
+    gap: 3px;
+}
+.row-item button{
+    padding: 3px;
+}

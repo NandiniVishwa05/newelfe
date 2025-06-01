@@ -1,0 +1,86 @@
+.userformleftrightwrapper {
+    padding: 30px 15px;
+    gap: 25px;
+
+}
+
+.userformleftwrapper,
+.userformrightwrapper {
+    gap: 20px;
+    width: 50%;
+}
+
+.userforminputitem {
+    gap: 20px;
+}
+
+.userformleftwrapper select {
+    width: 245px;
+}
+
+.userformbuttonwrapper {
+    gap: 10px;
+    justify-content: flex-end;
+    padding: 15px;
+}
+
+.userformbuttonwrapper button {
+    width: 25%;
+}
+.updatebtn{
+    display: none;
+}
+.savebtn {
+    background-color: green;
+    border: 1px solid green;
+}
+
+.savebtn:hover {
+    border: 1px solid green;
+    color: green;
+}
+
+.backbtn {
+    background-color: #cf2828;
+    border: 1px solid #cf2828;
+}
+
+.backbtn:hover {
+    border: 1px solid #cf2828;
+    color: #cf2828;
+}
+
+.date {
+    width: 228px;
+}
+
+@media screen and (max-width: 767px) {
+    .userformleftrightwrapper {
+        flex-direction: column;
+    }
+
+    .userformleftwrapper,.userformrightwrapper {
+        width: 100%;
+    }
+    .userformbuttonwrapper{
+        justify-content: center;
+    }
+}
+@media screen and (max-width: 1205px) {
+    .userformleftrightwrapper {
+        flex-direction: column;
+    }
+
+    .userformleftwrapper,.userformrightwrapper {
+        width: 100%;
+    }
+    .userforminputitem{
+        justify-content: space-between;
+        width: 100%;
+        margin: 0 auto ;
+    }
+    .userformbuttonwrapper{
+        justify-content:center;
+    }
+    
+}

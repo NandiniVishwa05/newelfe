@@ -1,0 +1,23 @@
+.loginpagemainwrapper {
+    position: absolute;
+    top: 20%;
+    height: auto;
+    width: 100%;   
+}
+.loginpagewrapper {
+    padding: 20px 30px;
+    gap: 25px;
+    width: 350px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+.loginnotewrapper p{
+    color: red;
+    padding: 30px;
+}
+.loginbodywrapper {
+    gap: 12px;
+}
+.logininputwrapper input {
+    margin: 5px 0;
+    width: 94%;
+}
